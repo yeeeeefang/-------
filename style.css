@@ -1,0 +1,96 @@
+@charset "UTF-8"; /* 第一行必須是定義編碼 */
+body {
+    color: var(--text);
+}
+body,h1,ul {
+    margin: 0; /* 清除預設間距 */
+}
+ul { /* 清除預設樣式 */
+    list-style-type: none;
+    padding: 0;
+}
+img {
+    display: block; /* 取消inline-block預設空白 */
+    width: 100%; /* 自動抓父元素的寬度 */
+}
+a {
+    color: var(--link);
+    text-decoration-line: none;
+}
+a:hover {
+    color: var(--primary-1);
+    /* text-decoration: underline wavy; */
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+}
+a:active {
+    color: var(--active); 
+}
+
+/* 變數區 */
+:root {
+    --primary-1:#b90101;
+    --primary-2:#eec042;
+    --primary-3:#5e2a0d;
+    --link: #555;
+    --text: #444444;
+    --active: red;
+}
+
+/* 主要內容共用區 */
+main {
+    clear: both; /* 清除浮動造成的排版錯誤 */
+    padding: 0 50px; /* 主要內容區塊共用 */
+}
+section {
+    max-width: 1400px;
+    margin: 0 auto; 
+    /* 水平置中可用auto值，自動均分間距，
+       !!!一定要搭配寬度!!!不然不知道要要甚麼尺寸
+       如果不用flex的話可用這個 */
+}
+.title h2 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+.title h2 span {
+    color: var(--primary-1);
+    font-size: 1rem;
+    margin-left: 10px;
+}
+.title h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin: 10px 0;
+}
+/* 列表 */
+.listbox {
+    display: flex;
+}
+.listbox article {
+    flex: 1;
+    margin: 0 15px;
+    background-color: var(--primary-2);
+    p{color: var(--primary-3);}
+}
+.listbox figure {
+    margin: 0;
+    height: 280px;/* h280 簡寫 */
+}
+.listbox .content{
+    padding: 20px; /* 圖片不貼邊 設定字而已 */
+}
+.listbox img {
+    /* 重置區已經設定過w100% 一定要設定*/
+    height: 100%;
+    object-fit: cover; /* cover  短邊滿版，長邊剪裁 
+                        contain 長邊滿版，短邊等比例縮放*/
+}
+.listbox .content {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    margin: 30px 0;
+}
